@@ -7,27 +7,22 @@ import { CreateMovieDto } from '../../controllers/movies/dto/create-movie.dto';
 
 @Service()
 export class MoviesService extends BaseDatabaseService {
-    
-    async getAll(
-        search?: string,
-        skip: number = 0,
-        take: number = 10,
-    ) {
+    async getAll(search?: string, skip: number = 0, take: number = 10) {
         const where: Prisma.MovieWhereInput = {};
 
         if (search) {
             where.OR = {
                 name: {
                     startsWith: search,
-                    mode: 'insensitive'
+                    mode: 'insensitive',
                 },
-            }
+            };
         }
 
         const data = await this.prismaClient.movie.findMany({
             where,
             orderBy: {
-                durationInMinutes: 'desc'
+                durationInMinutes: 'desc',
             },
             skip: skip,
             take: take,

@@ -10,8 +10,8 @@
 2. Install node version `16.15` to fit with Project engine -- `nvm install 16.15`
 3. Once you have it, you can run this entire command: `nvm use 16.15 && yarn`
 4. Run `yarn prisma:generate`
-3. [Install](https://docker-docs.netlify.app/compose/install/) `docker-compose`
-4. Run `docker-compose up`
-5. Run `yarn prisma:migrate`
-6. Run `yarn prisma:seed`
-5. Run `yarn dev`
+5. [Install](https://docker-docs.netlify.app/compose/install/) `docker-compose`
+6. Run `docker-compose up`
+7. Run `yarn prisma:migrate`
+8. Run `yarn prisma:seed`
+9. Run `yarn dev`

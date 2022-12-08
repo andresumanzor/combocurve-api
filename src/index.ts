@@ -8,7 +8,7 @@ import { getClient } from './db-client';
 Container.set('prismaClient', getClient());
 
 const NAME = 'combocurve-api';
-const PORT = process.env.PORT || '8080'
+const PORT = process.env.PORT || '8080';
 const env = process.env.NODE_ENV || 'development';
 
 getApp()

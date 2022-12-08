@@ -12,11 +12,7 @@ export class EngineersController {
 
     @Get()
     async fetchAllEngineers(@QueryParams() queryParams: GetAllEngineersQueryParamsDto) {
-        const result = await this.moviesService.getAll(
-            queryParams.search,
-            queryParams.skip,
-            queryParams.take,
-        );
+        const result = await this.moviesService.getAll(queryParams.search, queryParams.skip, queryParams.take);
 
         const hasMore = result.count > (queryParams.skip || 0) + result.data.length;
 
